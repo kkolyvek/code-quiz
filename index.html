@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Code Quiz!</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    
+    <!-- header with view highscores option -->
+    <header>
+        <div id="nav">
+            <button class="btn" id="mainMenu">Take Quiz</button>
+            <button class="btn" id="viewHighscores">View highscores</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- start page (intro text, start button) -->
+        <div class="wrapper" id="start-wrapper">
+            <h1>Welcome to the JavaScript Fundamentals Quiz!</h1>
+            <p>You will have 60 seconds to answer questions on basic JavaScript knowledge. Make sure to initial your score before you go!</p>
+            <button class="btn" id="startGame">Start Quiz</button>
+        </div>
+        <!-- countdown page (3, 2, 1, Go!) -->
+        <div class="wrapper" id="countdown-wrapper">
+            <h1 id="countdown-text"></h1>
+        </div>
+        <!-- game page (question, answer options, maybe timer) -->
+        <div class="wrapper" id="questions-wrapper">
+            <h2 id="game-timer"></h2>
+            <h1 id="question-h1"></h1>
+            <div id="answers-container"></div>
+        </div>
+        <!-- input score page (once game ends) -->
+        <div class="wrapper" id="initials-wrapper">
+            <h1>Good work!</h1>
+            <p>Enter your initials to see if you've earned a spot on the leaderboards.</p>
+        </div>
+        <!-- highscores page (for after game + on button click) -->
+        <div class="wrapper" id="highscores-wrapper">
+            <h1>Highscores</h1>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </main>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>

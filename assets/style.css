@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  background: rgb(44, 44, 44); /* #f9fbfd; dark for the plane ride */
+  font-family: sans-serif;
+  font-size: large;
+}
+
+/* CLASSES WITH CONSISTENT STYLING */
+.btn {
+  margin: 20px;
+  padding: 15px;
+  background: orange;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.answer-btn {
+  margin: 5px;
+  padding: 15px;
+  background: cyan;
+  border: none;
+  border-radius: 8px;
+}
+
+.answer-btn:hover {
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  background: lightblue;
+  width: 50%;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 16px;
+}
+
+h1 {
+  background: none;
+  align-self: center;
+  font-size: x-large;
+  padding: 30px;
+}
+
+/* HEADER/NAVBAR STYLING */
+#nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#mainMenu {
+  margin-right: 0;
+}
+
+/* MAIN CONTENT STYLING */
+/* set most wrappers to hidden to start  */
+#countdown-wrapper {
+  display: none;
+}
+
+#questions-wrapper {
+  display: none;
+}
+
+#initials-wrapper {
+  display: none;
+}
+
+#highscores-wrapper {
+  display: none;
+}
+
+#start-wrapper p {
+  background: none;
+  padding-bottom: 30px;
+}
+
+#startGame {
+  align-self: center;
+}
+
+#game-timer {
+  align-self: flex-end;
+  background: none;
+}
+
+#answers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  background: none;
+}
+
+#highscores-wrapper ol {
+  background: none;
+  padding-left: 100px;
+}
+
+#highscores-wrapper ol li {
+  background: none;
+  margin: 5px 20px;
+  padding: 5px;
+}
