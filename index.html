@@ -36,13 +36,17 @@
         </div>
         <!-- input score page (once game ends) -->
         <div class="wrapper" id="initials-wrapper">
-            <h1>Good work!</h1>
+            <h1 id="score-display-initials"></h1>
             <p>Enter your initials to see if you've earned a spot on the leaderboards.</p>
+            <form action="" id="initials-form">
+                <input type="text" id="initials" placeholder="Initials" required>
+                <input type="submit" value="Submit" id="initials-submit" class="btn">
+            </form>
         </div>
         <!-- highscores page (for after game + on button click) -->
         <div class="wrapper" id="highscores-wrapper">
-            <h1>Highscores</h1>
-            <ol>
+            <h1>Top 10 Highscores</h1>
+            <ol id="scores-list">
                 <li></li>
                 <li></li>
                 <li></li>

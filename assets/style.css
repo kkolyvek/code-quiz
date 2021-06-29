@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 
-  background: rgb(44, 44, 44); /* #f9fbfd; dark for the plane ride */
+  background: #5b5c5e;
   font-family: sans-serif;
   font-size: large;
 }
@@ -46,7 +46,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  background: lightblue;
+  background: #abc7ff;
   width: 50%;
   margin: 50px;
   padding: 50px;
@@ -61,10 +61,17 @@ h1 {
 }
 
 /* HEADER/NAVBAR STYLING */
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
 #nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  border-bottom: 1px solid #333436;
 }
 
 #mainMenu {
@@ -112,13 +119,34 @@ h1 {
   background: none;
 }
 
+#initials-wrapper p {
+  background: none;
+}
+
+#initials-form {
+  background: none;
+  align-self: center;
+}
+
+input[type="text"] {
+  border: 1px solid white;
+  border-radius: 4px;
+  background: white;
+  padding: 12px;
+}
+
 #highscores-wrapper ol {
   background: none;
-  padding-left: 100px;
+  align-self: center;
 }
 
 #highscores-wrapper ol li {
   background: none;
   margin: 5px 20px;
   padding: 5px;
+  font-size: larger;
+}
+
+#highscores-wrapper ol li:before {
+  color: red;
 }
