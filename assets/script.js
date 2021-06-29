@@ -34,31 +34,11 @@ if (!localStorage.getItem("highscoresArray")) {
 };
 
 // GAMEPLAY ASSET VARIABLES
+var gameTimer = null; // this is the quiz timer - set globally
 var countdownTextArray = ["3", "2", "1", "Go!", "filler"];
 var abcd = ["a", "b", "c", "d"];
 var randIndex = 0; // global index for which question is being asked...
-var questionsObject = [
-    {
-        question: "Which keyword can NOT be used to define a variable?",
-        answerCorrect: "make",
-        answersIncorrect: ["var", "let", "const"]
-    },
-    {
-        question: "Which operator represents 'A is less than or equal to B'?",
-        answerCorrect: "A <= B",
-        answersIncorrect: ["A != B", "A === B", "A >= B"]
-    },
-    {
-        question: "What are the primitive data types in JavaScript?",
-        answerCorrect: "String, Number, and Boolean",
-        answersIncorrect: ["Object, Array, and Function", "Undefined and Null", ".html, .css, and .js files"]
-    },
-    {
-        question: "When was JavaScript first released?",
-        answerCorrect: "1995",
-        answersIncorrect: ["1233", "2002", "1978"]
-    }
-];
+var questionsObject = []; // global array of question objects... gets initialized before every quiz
 
 // ******************
 // GAMEPLAY FUNCTIONS
@@ -109,6 +89,9 @@ function displayQ() {
             newBtn.textContent = abcd[i] + ") " + ans;
             answersContainer.appendChild(newBtn);
         };
+    } else {
+        clearInterval(gameTimer);
+        endGame();
     };
 };
 
@@ -138,13 +121,43 @@ function startGame() {
             question: "When was JavaScript first released?",
             answerCorrect: "1995",
             answersIncorrect: ["1233", "2002", "1978"]
+        },
+        {
+            question: "A local variable can be accessed ______.",
+            answerCorrect: "within the scope it was defined in",
+            answersIncorrect: ["anywhere in the script", "in any JavaScript file ever", "only once"]
+        },
+        {
+            question: "Which of these is an int variable?",
+            answerCorrect: "1",
+            answersIncorrect: ["1.01", "'1'", "'one'"]
+        },
+        {
+            question: "Which tag must be used to link a JavaScript file to an HTML file?",
+            answerCorrect: "<script>",
+            answersIncorrect: ["<src>", "<javascript>", "<code>"]
+        },
+        {
+            question: "Which of the following will have the for loop execute 10 times?",
+            answerCorrect: "for (var i=0; i<10; i++) {}",
+            answersIncorrect: ["for (var i=1; i<10; i++) {}", "for (var i=0; i<10; i--) {}", "for (var i=0; i<=10; i++) {}"]
+        },
+        {
+            question: "A 'Do While' loop will execute a minimum of _____ times.",
+            answerCorrect: "one",
+            answersIncorrect: ["zero", "unlimited", "two"]
+        },
+        {
+            question: "A JavaScript object is populated by what?",
+            answerCorrect: "Key: value pairs",
+            answersIncorrect: ["Parent: child pairs", "indices", "String variables"]
         }
     ];
 
     // begin timer
     var gameTime = 60;
     gameTimerText.textContent = gameTime;
-    var gameTimer = setInterval(function() {
+    gameTimer = setInterval(function() {
         // display time remaining
         gameTime--;
         gameTimerText.textContent = gameTime;
@@ -202,11 +215,21 @@ function buildLeaderboard() {
 // EVENT LISTENERS
 // ***************
 viewHighscoresBtn.addEventListener("click", function () {
+    // stop quiz if in the middle of one
+    if (gameTimer != null) {
+        clearInterval(gameTimer);
+    };
     buildLeaderboard();
     displayWrappers("highscores-wrapper") 
 });
 
-mainMenuBtn.addEventListener("click", function() { displayWrappers("start-wrapper") });
+mainMenuBtn.addEventListener("click", function() { 
+    // stop quiz if in the middle of one
+    if (gameTimer != null) {
+        clearInterval(gameTimer);
+    };
+    displayWrappers("start-wrapper") 
+});
 
 startGameBtn.addEventListener("click", function() { countdown() });
 
